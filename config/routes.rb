@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :foos
+
   resources :stats
   get 'stats' => 'stats#index', as: 'stats_path'
 

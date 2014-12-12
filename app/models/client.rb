@@ -1,5 +1,6 @@
 class Client < ActiveRecord::Base
   def self.seed_data!
+    Client.delete_all
     ages = (18..85).to_a
 
     500.times do |number|
