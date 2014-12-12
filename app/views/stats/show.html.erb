@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @stat.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @stat.age %>
+</p>
+
+<p>
+  <strong>Height in inches:</strong>
+  <%= @stat.height_in_inches %>
+</p>
+
+<p>
+  <strong>Integer:</strong>
+  <%= @stat.integer %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @stat.weight %>
+</p>
+
+<p>
+  <strong>Wellness goals:</strong>
+  <%= @stat.wellness_goals %>
+</p>
+
+<%= link_to 'Edit', new_stat_path(@stat) %> |
+<%= link_to 'Back', stats_path %>

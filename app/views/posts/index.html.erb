@@ -1,0 +1,7 @@
+<h1>Posts</h1>
+<%= will_paginate @posts %>
+
+<%= render :partial => @posts %>
+
+<%= link_to 'Home', root_path %>
+<%= link_to 'Local Events', calendar_path %>

@@ -1,0 +1,22 @@
+<div class="jumbotron">
+  <div class="row">
+    <% unless @user.omniauth? %>
+      <div class="col-xs-6 center-block">
+        <%= image_tag('facebook_logo2.png', class: 'img-responsive') %>
+        <%= link_to button_tag('Sign up via Facebook', class: 'btn-auth btn-facebook'), '/auth/facebook' %>
+      </div>
+      <div class="col-xs-4 col-xs-offset-2">
+        <h1>Signup</h1>
+    <% else %>
+      <div class="col-xs-10 col-xs-offset-2 center-block">
+        <h1>Verify Details</h1>
+    <% end %>
+
+    <%= render 'users/form' %>
+
+    <%= link_to 'Home', root_path %>
+
+    </div>
+    </div>
+  </div>
+</div>
