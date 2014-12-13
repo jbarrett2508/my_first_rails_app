@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :clients
 
-  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/:provider/callback', to: 'sessions#oauth'
 
   resources :users,
     only: [:new, :create],
