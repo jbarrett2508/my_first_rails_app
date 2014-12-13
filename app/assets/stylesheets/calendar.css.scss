@@ -1,3 +1,26 @@
 // Place all the styles related to the Calendar controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+table.calendar {
+  tr:first-child {
+    height: 15px;
+  }
+  tr {
+    height: 150px;
+  }
+  th,td {
+    width: 14%;
+  }
+  th {
+    text-align: center;
+  }
+  td.not-month {
+//    color: lighten(#000000, 50%);
+    background: repeating-linear-gradient(
+      45deg,
+        rgba(204, 204, 204, 0.30),
+      #cccccc 10px
+    );
+  }
+}

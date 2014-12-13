@@ -2,10 +2,9 @@
 <div class="row">
   <div class="col-md-12 text-center">
     <div class="well controls">
-      <%= link_to "<", date: @date.prev_month %>
+      <%= link_to "<", calendar_path(date: @date.prev_month) %>
       <%= @date.strftime("%B %Y") %>
-      <%= link_to ">", date: @date.next_month %>
-      <i class="glyphicon glyphicon-forward"></i>
+      <%= link_to ">", calendar_path(date: @date.next_month) %>
     </div>
   </div>
 </div>
@@ -13,6 +12,9 @@
   <div class="col-md-12">
     <%= calendar @date do |date| %>
       <%= date.day %>
+      <%# Event.for_date(date).each do |event| %>
+        <%# link_to 'Event #1', event_path(event) %>
+      <%# end %>
     <% end %>
   </div>
 </div>

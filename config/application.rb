@@ -29,9 +29,3 @@ module MyFirstRailsApp
   end
 end
 
-module CalendarExample
-  class Application < Rails::Application
-    config.autoload_paths += %W(#{config.root}/lib)
-
-  end
-end
