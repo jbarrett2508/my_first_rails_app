@@ -3,13 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 table.calendar {
+
   tr:first-child {
     height: 15px;
   }
   tr {
+    background-color: #ccccccc;
     height: 150px;
   }
   th,td {
+    background-color: #f9f9f9;
     width: 14%;
   }
   th {

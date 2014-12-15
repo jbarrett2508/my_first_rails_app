@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :events
+
   resources :foos
 
   resources :stats
@@ -32,5 +34,11 @@ Rails.application.routes.draw do
     to: 'sessions#destroy'
 
   get 'verification/:token', to: 'users#verify', as: 'verify_email'
+
+  get 'events' => 'events#index'
+
+  get 'recipes' => 'recipes#index'
+
+  get 'calculator' => 'calculator#show'
 
 end

@@ -7,11 +7,6 @@ class StatsController < ApplicationController
     @stats = Stat.all
   end
 
-  # GET /stats/1
-  # GET /stats/1.json
-  def show
-  end
-
   # GET /stats/new
   def new
     @stat = Stat.new
@@ -63,9 +58,9 @@ class StatsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_stat
-      @stat = Stat.find(params[:id])
-    end
+  def set_stat
+    @client = Client.find(params[:id])
+  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stat_params

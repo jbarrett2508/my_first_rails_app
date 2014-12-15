@@ -3,7 +3,7 @@
   <div class="col-md-12 text-center">
     <div class="well controls">
       <%= link_to "<", calendar_path(date: @date.prev_month) %>
-      <%= @date.strftime("%B %Y") %>
+      <h3><%= @date.strftime("%B %Y") %></h3>
       <%= link_to ">", calendar_path(date: @date.next_month) %>
     </div>
   </div>
@@ -12,9 +12,20 @@
   <div class="col-md-12">
     <%= calendar @date do |date| %>
       <%= date.day %>
+      <%# if @event.for_date(date) %>
+      <%#= Event.for_date(date).each do |event| %>
+      <%#= link_to 'Event #1', event_path(event) %>
+      <%# end %>
+        <%# end %>
+      <% end %>
+      <%# if @events_by_date(date) %>
+        <ul>
+          <%# @events_by_date(date).each do |event| %>
+            <%#= link_to event.name, event %>
+          <%# end %>
+        </ul>
       <%# Event.for_date(date).each do |event| %>
         <%# link_to 'Event #1', event_path(event) %>
       <%# end %>
-    <% end %>
   </div>
 </div>

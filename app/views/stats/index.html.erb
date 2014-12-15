@@ -22,9 +22,6 @@
         <td><%= stat.integer %></td>
         <td><%= stat.weight %></td>
         <td><%= stat.wellness_goals %></td>
-        <td><%= link_to 'Show', stat %></td>
-        <td><%= link_to 'Edit', edit_stat_path(stat) %></td>
-        <td><%= link_to 'Destroy', stat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +29,4 @@
 
 <br>
 
-<%= link_to 'Update My Stats', new_stat_path(@stat) %>
+<h2><%= link_to 'Update My Stats', 'stats/edit' %></h2>
