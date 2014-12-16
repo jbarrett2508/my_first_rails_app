@@ -1,0 +1,3 @@
+class BioController < ApplicationController
+
+end

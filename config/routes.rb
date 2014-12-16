@@ -41,4 +41,6 @@ Rails.application.routes.draw do
 
   get 'calculator' => 'calculator#show'
 
+  get 'bio' => 'bio#index'
+
 end
