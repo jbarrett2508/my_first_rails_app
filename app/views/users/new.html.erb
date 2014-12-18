@@ -6,13 +6,13 @@
         <%= link_to button_tag('Sign up via Facebook', class: 'btn-auth btn-facebook'), '/auth/facebook' %>
       </div>
       <div class="col-xs-4 col-xs-offset-2">
-        <h1>Signup</h1>
+        <h1>Sign Up</h1>
     <% else %>
       <div class="col-xs-10 col-xs-offset-2 center-block">
         <h1>Verify Details</h1>
     <% end %>
 
-    <%= render 'users/form' %>
+    <%= render 'form' %>
 
     <%= link_to 'Home', root_path %>
 

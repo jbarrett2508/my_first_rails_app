@@ -10,6 +10,8 @@ gem 'omniauth-facebook'
 gem 'jquery-ui-rails'
 gem 'bootstrap-generators'
 gem 'pry'
+gem 'cancancan', '~> 1.9'
+gem 'nested_scaffold'
 
 
 group :test, :darwin, :development do

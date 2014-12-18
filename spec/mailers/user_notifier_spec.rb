@@ -9,7 +9,7 @@ RSpec.describe UserNotifier, :type => :mailer do
     it "renders the headers" do
       expect(mail.subject).to eq('Please verify your e-mail address')
       expect(mail.to).to eq([user.email])
-      expect(mail.from).to eq(['instructor@jasonnoble.org'])
+      expect(mail.from).to eq(["ph.worthington.il@gmail.com"])
     end
 
     it "renders the body" do
@@ -24,7 +24,7 @@ RSpec.describe UserNotifier, :type => :mailer do
     it "renders the headers" do
       expect(mail.subject).to eq('Thank you for verifying your e-mail address')
       expect(mail.to).to eq([user.email])
-      expect(mail.from).to eq(['instructor@jasonnoble.org'])
+      expect(mail.from).to eq(["ph.worthington.il@gmail.com"])
     end
 
     it "renders the body" do
@@ -38,7 +38,7 @@ RSpec.describe UserNotifier, :type => :mailer do
     it "renders the headers" do
       expect(mail.subject).to eq('Please verify your e-mail address')
       expect(mail.to).to eq([user.email])
-      expect(mail.from).to eq(['instructor@jasonnoble.org'])
+      expect(mail.from).to eq(["ph.worthington.il@gmail.com"])
     end
 
     it "renders the body" do

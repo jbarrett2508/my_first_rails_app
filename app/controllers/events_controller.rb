@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate, :except => [:index, :show]
 
   # GET /events
   # GET /events.json
@@ -8,7 +9,7 @@ class EventsController < ApplicationController
   end
 
   def for_date
-   @event = Event.find(params[:date])
+    @event = Event.find(params[:date])
   end
 
   # GET /events/1
@@ -32,7 +33,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        format.html { redirect_to calendar_path, notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new }
@@ -66,7 +67,13 @@ class EventsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+  # Use callbacks to share common setup or constraints between actions.
+
+  def authenticate
+    authenticate_or_request_with_http_basic do |name, password|
+      name == "admin" && password == "secret"
+    end
+
     def set_event
       @event = Event.find(params[:id])
     end
@@ -75,4 +82,5 @@ class EventsController < ApplicationController
     def event_params
       params.require(:event).permit(:name, :date)
     end
+  end
 end

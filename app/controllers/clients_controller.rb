@@ -1,10 +1,10 @@
 class ClientsController < ApplicationController
   before_action :set_client, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate, :except => [:index, :show]
   # GET /clients
   # GET /clients.json
   def index
-    @clients = Client.all.paginate(page: params[:page], per_page:10)
+    @clients = Client.all.paginate(page: params[:page], per_page: 10)
   end
 
   # GET /clients/1
@@ -62,13 +62,19 @@ class ClientsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_client
-      @client = Client.find(params[:id])
+  # Use callbacks to share common setup or constraints between actions.
+  def set_client
+    @client = Client.find(params[:id])
+  end
+
+  def authenticate
+    authenticate_or_request_with_http_basic do |name, password|
+      name == "admin" && password == "secret"
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_params
       params.require(:client).permit(:first_name, :last_name, :gender, :age)
     end
+  end
 end

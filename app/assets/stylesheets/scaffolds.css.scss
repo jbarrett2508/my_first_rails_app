@@ -34,8 +34,16 @@ a {
 div {
   &.field, &.actions {
     margin-bottom: 10px;
+      opacity: 0.5;
+      width:850px;
+      height: 100%;
+      margin-left:auto;
+      margin-right:auto;
+      padding: 15px;
+      background-color:#1a1a1a; }
+
+    p{ color: black; }
   }
-}
 
 #notice {
   color: green;

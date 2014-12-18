@@ -27,16 +27,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "Sign In", "#", :class => "navbar-brand" %>
+      <%= link_to "", "#", :class => "navbar-brand" %>
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li class="active"><a href="/">Home</a></li>
         <li><a href="recipes">Recipes</a></li>
-        <li><a href="#contact">Resources</a></li>
+        <li><a href="resources">Resources</a></li>
         <li><a href="calculator">Calorie Calculator</a></li>
         <li><a href="bio">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="contact">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -50,19 +50,29 @@
     <% end %>
   <% end %>
 
+  <%= render 'layouts/authentication' %>
+
   <%= yield %>
   <br>
   <br>
 
-  <div class="container">
-    <div class="row">
-      <div class="span9"></div>
-      <div class="span3">
-        <h2>What Are Your Goals?</h2>
-        Are you ready to start living your better life? We're here to help you! Through this site you can create an account to identify your specific healthy-living goals (and calculate how to reach them), browse healthy recipes, get tips for further reading, find out about local fitness-related events in your area, and book an appointment with Phil to jumpstart your new healthy life. We're committed to helping you every step of the way, so please contact us with any questions or comments you have. Thanks for stopping by--now let's get started!
-      </div>
-    </div>
-  </div>
-</div>
+  <!--<div class="container">-->
+    <!--<div class="row">-->
+      <!--<div class="span9"></div>-->
+      <!--<div class="span3">-->
+        <!--<div class="well">-->
+          <!--<h2>What Are Your Goals?</h2>-->
+          <!--Are you ready to start living your better life? We're here to help you! Through this site you can create an-->
+          <!--account to identify your specific healthy-living goals (and calculate how to reach them), browse healthy-->
+          <!--recipes, get tips for further reading, find out about local fitness-related events in your area, and book an-->
+          <!--appointment with Phil to jumpstart your new healthy life. We're committed to helping you every step of the-->
+          <!--way, so please contact us with any questions or comments you have. Thanks for stopping by--now let's get-->
+          <!--started!-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+</body>
 </body>
 </html>

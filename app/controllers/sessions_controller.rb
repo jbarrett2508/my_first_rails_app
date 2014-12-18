@@ -1,9 +1,12 @@
 class SessionsController < ApplicationController
+  def login
+  end
+
   def create
     user = User.find_by_username(params[:username])
     if user && user.authenticate(params[:password])
       # user submitted valid password
-      session[:user_id] = user.id
+      session[:id] = user.id
       redirect_to stats_path, notice: "Welcome back #{user.first_name.titleize}"
     else
       flash[:error] = "Invalid username or password. Please try again."
@@ -13,7 +16,7 @@ class SessionsController < ApplicationController
 
   def destroy
     if user = current_user
-      session[:id] = nil
+      session.delete(:id)
       redirect_to root_path, notice: "#{user.username} has been logged out"
     end
   end

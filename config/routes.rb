@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :events
+  resources :resources
 
-  resources :foos
+  resources :events
 
   resources :stats
   get 'stats' => 'stats#index', as: 'stats_path'
@@ -42,5 +42,7 @@ Rails.application.routes.draw do
   get 'calculator' => 'calculator#show'
 
   get 'bio' => 'bio#index'
+
+  get 'contact' => 'contact#show'
 
 end

@@ -9,10 +9,10 @@ class UsersController < ApplicationController
     if @user.save
       @user.needs_verification!
       session[:id] = @user.id
-      redirect_to root_path,
+      redirect_to stats_path,
         notice: "Thank you for signing up #{@user.first_name.titleize}"
     else
-      render :new
+      render :new, error: "Verification email could not be sent."
     end
   end
 

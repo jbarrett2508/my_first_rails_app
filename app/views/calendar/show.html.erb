@@ -11,11 +11,11 @@
 <div class="row">
   <div class="col-md-12">
     <%= calendar @date do |date| %>
-      <%= date.day %>
+      <%= date.day %><br/>
       <%# if @event.for_date(date) %>
-      <%#= Event.for_date(date).each do |event| %>
-      <%#= link_to 'Event #1', event_path(event) %>
-      <%# end %>
+      <% Event.for_date(date).each do |event| %>
+        <%= link_to event.name, event_path(event) %><br/>
+      <% end %>
         <%# end %>
       <% end %>
       <%# if @events_by_date(date) %>

@@ -10,4 +10,10 @@ class ApplicationController < ActionController::Base
   def current_user
     @user ||= User.find(session[:id]) if session[:id]
   end
+
+  rescue_from CanCan::AccessDenied do |exception|
+    flash[:error] = "Access denied."
+    redirect_to root_url
+  end
+
 end

@@ -1,0 +1,39 @@
+<div class="page-header">
+  <%#= link_to new_resource_path, :class => 'btn btn-default' do %>
+  <!--# New Resource-->
+  <%# end %>
+  <h1>Resources</h1>
+  <%= will_paginate @clients %>
+</div>
+
+<div class="table-responsive">
+  <div class="well">
+    <table class="table table-striped table-bordered table-hover">
+      <thead>
+      <tr>
+        <th>Title</th>
+        <th>Medium</th>
+        <th>Year</th>
+        <th>Keywords</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <%= content_tag_for(:tr, @resources) do |resource| %>
+        <td><%= resource.title %></td>
+        <td><%= resource.medium %></td>
+        <td><%= resource.year %></td>
+        <td><%= resource.keywords %></td>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%= link_to '/', :class => 'btn btn-default' do %>
+  Home
+<% end %>
+<%#= link_to 'Home', '/' %>
+<%#= link_to 'Edit', edit_resource_path(resource) %>
+<%#= link_to 'Destroy', resource, method: :delete, data: { confirm: 'Are you sure?' } %>
+
