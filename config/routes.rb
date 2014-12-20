@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  #resources :profiles
+
   resources :resources
 
   resources :events
@@ -21,7 +23,13 @@ Rails.application.routes.draw do
 
   resources :users,
     only: [:new, :create],
-    path_names: { new: 'signup',  }
+    path_names: { new: 'signup' } do
+    member do
+      get 'profile' => 'users#profile'
+    end
+  end
+
+  # get 'my_profile' => 'profiles#edit'
 
   root :to => 'welcome#hello'
 

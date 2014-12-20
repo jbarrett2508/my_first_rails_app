@@ -1,5 +1,6 @@
 class Client < ActiveRecord::Base
   has_many :stats
+  accepts_nested_attributes_for :stats
   def self.seed_data!
     Client.delete_all
     ages = (18..85).to_a

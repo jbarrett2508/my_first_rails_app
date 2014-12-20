@@ -9,6 +9,9 @@ class ApplicationController < ActionController::Base
 
   def current_user
     @user ||= User.find(session[:id]) if session[:id]
+  rescue ActiveRecord::RecordNotFound
+    session.delete(:id)
+    nil
   end
 
   rescue_from CanCan::AccessDenied do |exception|

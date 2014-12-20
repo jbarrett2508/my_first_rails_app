@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141216032217) do
+ActiveRecord::Schema.define(version: 20141219222456) do
 
   create_table "clients", force: true do |t|
     t.string   "first_name"
@@ -31,17 +31,9 @@ ActiveRecord::Schema.define(version: 20141216032217) do
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id"
 
-  create_table "create_events", force: true do |t|
-    t.string   "name"
-    t.string   "start_at"
-    t.string   "end_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "events", force: true do |t|
     t.string   "name"
-    t.string   "date"
+    t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -60,22 +52,22 @@ ActiveRecord::Schema.define(version: 20141216032217) do
     t.datetime "updated_at"
   end
 
+  create_table "profiles", force: true do |t|
+    t.string   "name"
+    t.integer  "age"
+    t.string   "height_in_inches"
+    t.integer  "weight_in_lbs"
+    t.string   "wellness_goals"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "resources", force: true do |t|
     t.string   "title"
     t.string   "medium"
     t.integer  "year"
     t.text     "keywords"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "stats", force: true do |t|
-    t.string   "name"
-    t.integer  "age"
-    t.string   "height_in_inches"
-    t.string   "integer"
-    t.integer  "weight"
-    t.string   "wellness_goals"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

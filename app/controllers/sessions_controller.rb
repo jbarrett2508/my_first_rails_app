@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       # user submitted valid password
       session[:id] = user.id
-      redirect_to stats_path, notice: "Welcome back #{user.first_name.titleize}"
+      redirect_to profile_user_path(user), notice: "Welcome back #{user.first_name.titleize}"
     else
       flash[:error] = "Invalid username or password. Please try again."
       render :login

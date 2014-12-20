@@ -9,11 +9,16 @@ class UsersController < ApplicationController
     if @user.save
       @user.needs_verification!
       session[:id] = @user.id
-      redirect_to stats_path,
+      redirect_to profile_user_path(@user),
         notice: "Thank you for signing up #{@user.first_name.titleize}"
     else
       render :new, error: "Verification email could not be sent."
     end
+  end
+
+  def profile
+    @profile = current_user.profile
+    #@profile = Profile.where(user_id: current_user.id)
   end
 
   private

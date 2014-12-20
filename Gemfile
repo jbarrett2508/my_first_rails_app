@@ -17,6 +17,7 @@ gem 'nested_scaffold'
 group :test, :darwin, :development do
   # gem 'ruby_gntp'
   gem 'faker'
+  gem 'letter_opener'
 end
 
 group :test do

@@ -4,7 +4,7 @@ class CreateResources < ActiveRecord::Migration
       t.string :title
       t.string :medium
       t.integer :year
-      t.text :keywords
+      t.text :keyword
 
       t.timestamps
     end
